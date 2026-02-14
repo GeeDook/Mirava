@@ -91,7 +91,7 @@ This script verifies whether the mirrors defined in `mirrors_list.yaml` are actu
 
 ---
 
-## How to Contributing to Mirava
+## How to Contribute to Mirava
 
 If you know a reliable mirror (especially one located inside Iran and accessible without a VPN), we’d love to include it.
 
