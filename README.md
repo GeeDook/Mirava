@@ -120,14 +120,6 @@ Thanks for helping improve the project!
 
 ---
 
-## ☕ Support the Project
-
-If you find this project useful and would like to support it:
-
-[Buy me a coffee](https://www.coffeete.ir/geedook)
-
----
-
 Special thanks to **Arman Taheri**  
 [ArmanTaheriGhaleTaki](https://github.com/ArmanTaheriGhaleTaki)  
 for contributing multiple mirror links.
