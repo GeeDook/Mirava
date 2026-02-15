@@ -77,6 +77,24 @@ This repository maintains an up-to-date list of trusted domestic mirrors for wid
 
 ---
 
+## 🌍 Global & Official Mirrors
+
+This project also includes selected high-quality global mirrors from other countries and official upstream sources.  
+These mirrors provide redundancy, higher availability, and alternative routing paths in case of regional network instability.
+
+The following mirrors are well-known, actively maintained, and widely used within the open-source community.
+
+| Mirror / Country | URL | Description | Covered Packages |
+| ---------------- | --- | ----------- | ---------------- |
+| NYIST Open Source Mirror (China) | [mirror.nyist.edu.cn](https://mirror.nyist.edu.cn/) | University-operated open-source mirror providing a wide range of Linux distributions and language package repositories. | Debian, Ubuntu, CentOS, Fedora, Arch Linux, Alpine, openSUSE, Kali, Linux Mint, PyPI, CRAN, CPAN, RubyGems and more |
+| NJU Open Source Mirror (China) | [mirror.nju.edu.cn](https://mirror.nju.edu.cn/) | Nanjing University official mirror site serving major Linux distributions and development ecosystems. | Debian, Ubuntu, CentOS, Fedora, Arch Linux, Alpine, openSUSE, Manjaro, Gentoo, PyPI and more |
+| Huawei Cloud Open Source Mirror (China) | [mirror.huaweicloud.com](https://mirrors.huaweicloud.com/home) | Enterprise-grade mirror service operated by Huawei Cloud with CDN acceleration and global accessibility. | Debian, Ubuntu, CentOS Stream, Fedora, Arch Linux, Alpine, openEuler, PyPI, Maven, Docker, Kubernetes and more |
+| USTC Open Source Mirror (China) | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn/) | University of Science and Technology of China (USTC) mirror — one of the most established and comprehensive open-source mirror networks in Asia. | Debian, Ubuntu, CentOS, Fedora, Arch Linux, Alpine, openSUSE, Kali, Manjaro, PyPI, CRAN, Homebrew and more |
+| Yandex Mirror (Russia) | [mirror.yandex.ru](https://mirror.yandex.ru/) | High-speed Russian mirror operated by Yandex providing major Linux distributions and open-source repositories. | Debian, Ubuntu, CentOS, Fedora, Arch Linux and more |
+| Tsinghua University Mirror (China) | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn/) | TUNA (Tsinghua University Network Association) mirror — one of the most popular and comprehensive mirrors in China. | Debian, Ubuntu, CentOS, Fedora, Arch Linux, Alpine, openSUSE, Kali, Manjaro, PyPI, Homebrew, Docker and more |
+
+---
+
 ## 🧪 About `check_mirrors.sh`
 
 This script verifies whether the mirrors defined in `mirrors_list.yaml` are actually reachable, especially under Iranian network conditions.
