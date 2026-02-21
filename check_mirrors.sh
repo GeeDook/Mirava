@@ -2,6 +2,32 @@
 set -euo pipefail
 
 MIRROR_FILE="./mirrors_list.yaml"
+MIRROR_URL="https://raw.githubusercontent.com/MiravaOrg/Mirava/refs/heads/main/mirrors_list.yaml"
+
+# Check if curl is installed
+if ! command -v curl &> /dev/null; then
+  echo "❌ Error: curl is not installed."
+  echo "Please install curl first."
+  exit 1
+fi
+
+# Check if yq is installed
+if ! command -v yq &> /dev/null; then
+  echo "❌ Error: yq is not installed."
+  echo "Please install yq from: https://github.com/mikefarah/yq/"
+  exit 1
+fi
+
+# Check if mirrors_list.yaml exists, if not fetch it
+if [[ ! -f "$MIRROR_FILE" ]]; then
+  echo "⚠️  mirrors_list.yaml not found. Downloading from repository..."
+  if curl -fsSL "$MIRROR_URL" -o "$MIRROR_FILE"; then
+    echo "✅ Successfully downloaded mirrors_list.yaml"
+  else
+    echo "❌ Failed to download mirrors_list.yaml"
+    exit 1
+  fi
+fi
 
 declare -A PACKAGE_PATHS=(
   ["Ubuntu"]="ubuntu"
@@ -43,7 +69,13 @@ for idx in $(seq 0 $(yq e '.mirrors | length - 1' "$MIRROR_FILE")); do
 
   for j in $(seq 0 $((package_count - 1))); do
     package=$(yq e ".mirrors[$idx].packages[$j]" "$MIRROR_FILE")
-    path=${PACKAGE_PATHS[$package]:-}
+    
+    # Safely get path with set -u enabled
+    if [[ -v PACKAGE_PATHS["$package"] ]]; then
+      path=${PACKAGE_PATHS["$package"]}
+    else
+      path=""
+    fi
 
     if [[ "$package" == "Docker Registry" ]]; then
       check_docker_registry "$base_url"
